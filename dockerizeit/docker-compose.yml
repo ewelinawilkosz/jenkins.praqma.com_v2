@@ -9,7 +9,7 @@ services:
         - https_proxy
         - no_proxy
         - JAVA_OPTS
-	- prefix:/ci2
+        - prefix:/ci2
     ports:
       - "8080:8080"
       - "50000:50000"
