@@ -8,6 +8,8 @@ ENV https_proxy ${https_proxy:-}
 ENV no_proxy ${no_proxy:-}
 ARG JAVA_OPTS
 ENV JAVA_OPTS "-Djenkins.install.runSetupWizard=false ${JAVA_OPTS:-}"
+ARG JENKINS_OPTS
+ENV JENKINS_OPTS "--prefix=/ci2"
 
 # Define build argument and env variable master_image_version
 # Use to pass info about Jenkins version so it can be represented
