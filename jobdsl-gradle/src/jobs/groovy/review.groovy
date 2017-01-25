@@ -9,6 +9,8 @@ import javaposse.jobdsl.dsl.Job
 // and slave to run on from env variables
 def default_credentials = Helpers.readEnvVariable("default_credentials", "jenkins")
 def utilitySlave = Helpers.readEnvVariable("utility_slave", "utility-slave")
+def default_repo = Helpers.readEnvVariable("default_repo")
+def default_branch = Helpers.readEnvVariable("default_branch")
 
 // One more tmp hack - assume empty http_proxy/https_proxy/no_proxy
 // First reason is this bug in docker-compose https://github.com/docker/compose/issues/3281
@@ -36,7 +38,7 @@ Job review = new JobBuilder(this as DslFactory, "jenkins_as_a_code-review")
     .addShellStep("$build_script")
     .addShellStep("cd \$WORKSPACE/dockerizeit; ./generate-compose.py --debug --file docker-compose.yml --jmaster-image test-image --jmaster-version test-version --jslave-image test-image --jslave-version test-version && cat docker-compose.yml && git checkout HEAD docker-compose.yml")
     .addShellStep("cd \$WORKSPACE/dockerizeit/munchausen; cp ../docker-compose.yml .; docker build --build-arg http_proxy --build-arg https_proxy --build-arg no_proxy -t munchausen .")
-    .addScmBlock('$default_repo', "*/ready/**", default_credentials)
+    .addScmBlock(default_repo, "*/ready/**", default_credentials)
     .addScmPollTrigger()
-    .addPretestedIntegration('$default_branch')
+    .addPretestedIntegration(default_branch)
     .build()
