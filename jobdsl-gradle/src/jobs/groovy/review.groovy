@@ -9,8 +9,8 @@ import javaposse.jobdsl.dsl.Job
 // and slave to run on from env variables
 def default_credentials = Helpers.readEnvVariable("default_credentials", "jenkins")
 def utilitySlave = Helpers.readEnvVariable("utility_slave", "utility-slave")
-def default_repo = Helpers.readEnvVariable("default_repo")
-def default_branch = Helpers.readEnvVariable("default_branch")
+def default_repo = "git@github.com:Praqma/jenkins.praqma.com_v2.git"
+def default_branch = "master"
 
 // One more tmp hack - assume empty http_proxy/https_proxy/no_proxy
 // First reason is this bug in docker-compose https://github.com/docker/compose/issues/3281
