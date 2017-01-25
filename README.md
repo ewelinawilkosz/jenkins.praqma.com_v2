@@ -1,7 +1,7 @@
 # Jenkins as Code template
 
 ### Description
-The intention of this project is to create the easily configurable template, summarize the current best thinking and create unification for the stateless Jenkins deployments.
+The intention of this project is to replace our old Jenkins with this new JenkinsAsCode version based on the easily configurable template
 
 ### Getting started
 
@@ -94,5 +94,5 @@ We do have [Travis CI job](https://travis-ci.org/Praqma/JenkinsAsCodeReference) 
 You can also use review job created on the startup. This job relies on principals described in [this article](http://www.josra.org/blog/An-automated-git-branching-strategy.html)
 
 #### Project progress
-You can see project status on [its Waffle board](https://waffle.io/Praqma/JenkinsAsCodeReference).
+You can see project status on [its Waffle board](https://waffle.io/Praqma/jenkins.praqma.com_v2).
 At some point of time, we will kick off maintainers meetings. Stay tuned
