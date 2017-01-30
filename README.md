@@ -1,3 +1,7 @@
+---
+maintainer:
+  - ewelinawilkosz2
+---
 # Jenkins as Code template
 
 ### Description
