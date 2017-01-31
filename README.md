@@ -21,7 +21,7 @@ The intention of this project is to replace our old Jenkins with this new Jenkin
 * Clone this repository
 
 ```
-git clone https://github.com/Praqma/JenkinsAsCodeReference.git
+git clone https://github.com/Praqma/jenkins.praqma.com_v2.git
 ```
 
 * Set proxy variables. If you are still using docker-compose 1.7.0 then you have to do it even if you are not using a proxy because there is [a bug in docker-compose](https://github.com/docker/compose/issues/3281) which makes args return None instead of empty string. Because of that, if you don't use proxy, you have to define empty environment variables http_proxy, https_proxy, no_proxy. Otherwise you would have those variables set to point out your proxy settings
