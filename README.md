@@ -53,7 +53,7 @@ mkdir -p $HOME/jenkins-backup/userContent
 mkdir -p $HOME/jenkins-backup/slave/gradle
 mkdir -p $HOME/jenkins-backup/registry
 mkdir -p $HOME/jenkins-backup/workspace
-chmod -R 777 $HOME/jenkins-backup
+chown -R 1000:1000 $HOME/jenkins-backup
 ```
 
 * Make sure that you have `$HOME/.ssh` directory with the ssh keys for the user that can access GitHub or your own Git hosting. Docker compose will mount `$HOME/.ssh` to the Jenkins master container so it can create default credentials from it.
